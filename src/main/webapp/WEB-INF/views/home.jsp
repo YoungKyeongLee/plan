@@ -16,17 +16,20 @@ section div.intro h1{
 	text-align: center;
 	line-height: 100px;
 }
-section div.main{
+section div.main_div{
 	display: inline-flex;
 	height: 500px;
 	width: 100%;
-	borer: 1px solid yellow;
 }
-section div.main nav.nav{
+section div.main_div#main_sign_up,
+section div.main_div#main_sign_in{
+ 	display: none;
+}
+section div.main_div nav.nav{
 	display: inline-block;
 	width: 300px;
 }
-section div.main nav.nav div.menu{
+section div.main_div nav.nav div.menu{
 	display: block;
 	font-size: 20pt;
 	font-weight: bold;
@@ -34,11 +37,15 @@ section div.main nav.nav div.menu{
 	width: 300px;
 	height: 100px;
 	line-height: 100px;
+	border-radius: 40px;
 }
-section div.main nav.nav div.menu:hover{
-	background-color: green;
+section div.main_div nav.nav div.menu:hover{
+	cursor: pointer;
+	background-color: #E4F7BA;
+	font-size: 23pt;
+	color: #1DDB16;
 }
-section div.main article{
+section div.main_div article{
 	display:inline-block;
 	border: 1px solid orange;
 	vertical-align: top;
@@ -61,7 +68,7 @@ section div.main article{
 			PLAN과 함께 하루 목표와 일정을 관리하세요
 		</h1>
 	</div>
-	<div class="main">
+	<div class="main_div" id="main_div">
 		<nav class="nav">
 			<div class="menu" id="addSchedule">일정추가</div>
 			<div class="menu" id="addGoal">목표추가</div>
@@ -108,6 +115,7 @@ section div.main article{
 			
 <!-- 			일정 확인 -->
 			<div class="checkSchedule">
+				<h1>일정 확인</h1>
 				<nav>
 					<ul>
 						<li>달력
@@ -120,15 +128,54 @@ section div.main article{
 			
 <!-- 			타입 캡슐 -->
 			<div class="timeCapsual">
-				타임캡슐
+				<h1>타임 캡슐</h1>
+				<input type="date">
+				<input type="time">
+				<input type="checkbox">문자 알림(유료)
+				<input type="checkbox">카카오톡 알림(무료)
+				<input type="checkbox">이메일 알림(무료)
+				<br>
+				<input type="text" placeholder="제목">
+				<br>
+				<textarea rows="10" cols="50" placeholder="내용"></textarea>
 			</div>
 			
 <!-- 			알림 설정 -->
-			<div class="setAlarm">알림설정</div>
+			<div class="setAlarm">
+				<h1>알림설정</h1>
+				<nav>
+					<ul>
+						<li>문자 알림
+						<li>카카오톡 알림
+						<li>이메일
+					</ul>
+				</nav>
+			</div>
 		</article>
+	</div>
+	<div class="main_div" id="main_sign_up">
+		<span onclick="membership('main_div')">◀</span>
+		<br>
+		카카오톡 회원가입
+	</div>
+	<div class="main_div" id="main_sign_in">
+		<span onclick="membership('main_div')">◀</span>
+		<br>
+		카카오톡 로그인
 	</div>
 </section>
 <script>
+	function membership(type){
+		document.querySelectorAll(".main_div").forEach(main =>{
+			console.log(type, main);
+			if(main.id == type)
+				main.style.display = "inline-flex";
+			else
+				main.style.display = "none";
+		});
+	}
+
+
 	document.querySelectorAll(".menu").forEach(menu => { 
 		menu.addEventListener('click', function(event){ 
 			Activation = menu.id;

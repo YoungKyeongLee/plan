@@ -9,8 +9,8 @@
 			<h1>PLAN</h1>
 		</div>
 		<div class="header_membership">
-			<div class="header_button">SIGN UP</div>
-			<div class="header_button">SIGN IN</div>
+			<div class="header_button" onclick="membership('main_sign_up')">SIGN UP</div>
+			<div class="header_button" onclick="membership('main_sign_in')">SIGN IN</div>
 		</div>
 	</div>
 </header>
