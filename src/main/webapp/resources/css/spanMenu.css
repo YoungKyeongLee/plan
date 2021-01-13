@@ -1,0 +1,36 @@
+@charset "UTF-8";
+section article.art .checkMenu1,
+section article.art .checkMenu2{
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+}
+section article.art .checkMenu1 li,
+section article.art .checkMenu2 li{
+	width: 120px;
+	height: 50px;
+	line-height: 50px;
+	display: inline-block;
+	text-align: center;
+	background-color: #E0FF8B;
+	font-weight: bold;
+	color: grey;
+	font-size: 12pt;
+	border-radius: 30px;
+	border: 5px solid white;
+}
+section article.art .checkMenu1 li.select,
+section article.art .checkMenu2 li.select{
+	border: 5px solid #E0FF8B;
+	background-color: white;
+}
+section article.art .checkMenu1 li:hover,
+section article.art .checkMenu2 li:hover{
+	background-color: white;
+	color: #1DDB16;
+	border: 5px solid #E0FF8B;
+	cursor: pointer;
+}
+section article.art span{
+	display: block;
+}
