@@ -16,6 +16,15 @@
 <!-- 폰트어썸 -->
 <script src="https://kit.fontawesome.com/2f6ba02431.js" crossorigin="anonymous"></script>
 <style type="text/css">
+form.login_form{
+/* 	border: 1px solid red; */
+	margin: auto;
+	text-align: center;
+}
+form.login_form h1{
+	font-size: 30pt;
+}
+
 </style>
 </head>
 <body>
@@ -71,7 +80,17 @@
 	<div class="main_div" id="main_sign_in" style="display: none;">
 		<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
 		<br>
-		카카오톡 로그인
+			<form class="login_form" action="">
+				<h1>Login</h1>
+				<p>
+				<input type="text" placeholder="ID">
+				<p>
+				<input type="password" placeholder="PW">
+				<p>
+				<input type="submit" value="SIGN IN">
+				<p>
+				<a>did you forget your account?</a>
+			</form>
 	</div>
 </section>
 <script>
