@@ -13,6 +13,7 @@
 <link href="resources/css/addSetting.css" rel="stylesheet">
 <!-- 일정 확인, 알림 설정 -->
 <link href="resources/css/spanMenu.css" rel="stylesheet">
+<!-- 폰트어썸 -->
 <script src="https://kit.fontawesome.com/2f6ba02431.js" crossorigin="anonymous"></script>
 <style type="text/css">
 </style>
@@ -36,34 +37,36 @@
 		<article class="art">
 <!-- 			일정 추가 -->
 			<div id="addSchedule_div" class="article">
-				<%@ include file="addSchedule.jsp" %>
+				<%@ include file="article/addSchedule.jsp" %>
 			</div>
 			
 <!-- 			목표 추가 -->
 			<div id="addGoal_div" class="article" style="display: none;">
-				<%@ include file="addGoal.jsp" %>
+				<%@ include file="article/addGoal.jsp" %>
 			</div>
 			
 <!-- 			일정 확인 -->
 			<div id="checkSchedule_div" class="article" style="display: none;">
-				<%@ include file="checkSchedule.jsp" %>
+				<%@ include file="article/checkSchedule.jsp" %>
 			</div>
 			
 <!-- 			타입 캡슐 -->
 			<div id="timeCapsual_div" class="article" style="display: none;">
-				<%@ include file="timeCapsual.jsp" %>
+				<%@ include file="article/timeCapsual.jsp" %>
 			</div>
 			
 <!-- 			알림 설정 -->
 			<div id="setAlarm_div" class="article" style="display: none;">
-				<%@ include file="setAlarm.jsp" %>
+				<%@ include file="article/setAlarm.jsp" %>
 			</div>
 		</article>
 	</div>
 	<div class="main_div" id="main_sign_up" style="display: none;">
 		<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
 		<br>
-		카카오톡 회원가입
+		<button onclick="">
+			카카오톡 회원가입
+		</button>
 	</div>
 	<div class="main_div" id="main_sign_in" style="display: none;">
 		<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
