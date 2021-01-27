@@ -16,6 +16,13 @@
 <!-- 폰트어썸 -->
 <script src="https://kit.fontawesome.com/2f6ba02431.js" crossorigin="anonymous"></script>
 <style type="text/css">
+div.main_div i.fa-undo-alt{
+	font-size: 40pt;
+	margin: 5px;
+}
+div.main_div i.fa-undo-alt:hover{
+	cursor: pointer;
+}
 form.login_form{
 /* 	border: 1px solid red; */
 	margin: auto;
@@ -73,14 +80,29 @@ form.login_form h1{
 	<div class="main_div" id="main_sign_up" style="display: none;">
 		<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
 		<br>
-		<button onclick="">
-			카카오톡 회원가입
-		</button>
+			<form class="login_form" action="signUp/" method="POST">
+				<h1>Sign UP</h1>
+				<p>
+				<input type="text" placeholder="ID">
+				<p>
+				<input type="password" placeholder="PW">
+				<input type="password" placeholder="PW_Confirm">
+				<p>
+				<input type="text" placeholder="Name">
+				<p>
+				<input type="tel" placeholder="phoneNum">
+				<p>
+				<input type="email" placeholder="email"><span>인증하기</span>
+				<p>
+				<input type="date" placeholder="birthday">
+				<p>
+				<input type="submit" value="SIGN IN">
+			</form>
 	</div>
 	<div class="main_div" id="main_sign_in" style="display: none;">
 		<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
 		<br>
-			<form class="login_form" action="">
+			<form class="login_form" action="signIn/" method="POST">
 				<h1>Login</h1>
 				<p>
 				<input type="text" placeholder="ID">
@@ -89,7 +111,7 @@ form.login_form h1{
 				<p>
 				<input type="submit" value="SIGN IN">
 				<p>
-				<a>did you forget your account?</a>
+				<a href="">did you forget your account?</a>
 			</form>
 	</div>
 </section>

@@ -1,4 +1,4 @@
-package com.young.plan;
+package com.young.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -36,5 +36,5 @@ public class HomeController {
 		
 		return "home";
 	}
-	
 }
+
