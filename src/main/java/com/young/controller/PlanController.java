@@ -12,13 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
-public class HomeController {
+public class PlanController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(PlanController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -34,6 +31,11 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
+		return "home";
+	}
+	
+	@RequestMapping(value = "/signUp/", method = RequestMethod.POST)
+	public String signUp(String id, String abc) {
 		return "home";
 	}
 }

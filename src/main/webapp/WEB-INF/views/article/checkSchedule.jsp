@@ -8,6 +8,7 @@
 		<li id="list">리스트
 		<li id="item">품목별
 		<li id="graph">그래프
+		<li id="goal">목표
 	</ul>
 </nav>
 <span class="checkSpan1 cale">
@@ -26,4 +27,7 @@
 </span>
 <span class="checkSpan1 graph" style="display: none;">
 	그래프
+</span>
+<span class="checkSpan1 goal" style="display: none;">
+	목표
 </span>

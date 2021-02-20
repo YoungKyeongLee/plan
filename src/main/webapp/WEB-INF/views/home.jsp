@@ -43,11 +43,14 @@ form.login_form h1{
 		</h1>
 	</div>
 	<div class="main_div" id="main_div">
+		<article style="width:350px; height:450px; background-color: #EAEAEA;">
+			
+		</article>
 		<nav class="nav">
 			<div class="menu" id="addSchedule">일정추가<i id="addScheduleCheck" class="fas fa-check"></i></div>
 			<div class="menu" id="addGoal">목표추가<i id="addGoalCheck" class="fas fa-check" style="display: none;"></i></div>
 			<div class="menu" id="checkSchedule">일정확인<i id="checkScheduleCheck" class="fas fa-check" style="display: none;"></i></div>
-			<div class="menu" id="timeCapsual">타임캡슐<i id="timeCapsualCheck" class="fas fa-check" style="display: none;"></i></div>
+			<div class="menu" id="bucketList">버킷리스트<i id="bucketListCheck" class="fas fa-check" style="display: none;"></i></div>
 			<div class="menu" id="setAlarm">알림설정<i id="setAlarmCheck" class="fas fa-check" style="display: none;"></i></div>
 		</nav>
 		<article class="art">
@@ -67,8 +70,8 @@ form.login_form h1{
 			</div>
 			
 <!-- 			타입 캡슐 -->
-			<div id="timeCapsual_div" class="article" style="display: none;">
-				<%@ include file="article/timeCapsual.jsp" %>
+			<div id="bucketList_div" class="article" style="display: none;">
+				<%@ include file="article/bucketList.jsp" %>
 			</div>
 			
 <!-- 			알림 설정 -->
@@ -83,7 +86,7 @@ form.login_form h1{
 			<form class="login_form" action="signUp/" method="POST">
 				<h1>Sign UP</h1>
 				<p>
-				<input type="text" placeholder="ID">
+				<input name="id" type="text" placeholder="ID">
 				<p>
 				<input type="password" placeholder="PW">
 				<input type="password" placeholder="PW_Confirm">
