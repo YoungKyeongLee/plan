@@ -83,7 +83,7 @@ form.login_form h1{
 	<div class="main_div" id="main_sign_up" style="display: none;">
 		<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
 		<br>
-			<form class="login_form" action="signUp/" method="POST">
+			<form class="login_form">
 				<h1>Sign UP</h1>
 				<p>
 				<input name="id" type="text" placeholder="ID">
@@ -99,7 +99,7 @@ form.login_form h1{
 				<p>
 				<input type="date" placeholder="birthday">
 				<p>
-				<input type="submit" value="SIGN IN">
+				<input type="button" value="SIGN IN" onclick="signUp()">
 			</form>
 	</div>
 	<div class="main_div" id="main_sign_in" style="display: none;">
@@ -118,6 +118,11 @@ form.login_form h1{
 			</form>
 	</div>
 </section>
+<script>
+	function signUp(){
+		console.log('signUP');
+	}
+</script>
 <script>
 // 	회원가입, 로그인, 그리고 회원가입과 로그인 페이지에서 뒤로가기 버튼을 누를때 그에 맞는 영역을 보여주는 메서드
 	function membership(type){
