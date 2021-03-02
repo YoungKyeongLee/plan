@@ -2,5 +2,5 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <footer>
-푸터입니다.
+관리자에게 문의 : planSupportCenter
 </footer>
