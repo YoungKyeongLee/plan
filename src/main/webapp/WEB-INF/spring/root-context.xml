@@ -5,14 +5,19 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
-	<bean id="dataSource" class="org.apach.commons.dbcp2.BasicDataSource" destroy-method="close">
-		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="jdbcUrl" value="jdbc:oracle:thin:@124.51.143.96:49913:xe" /> 
-		<property name="user" value="plan" />
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@124.51.143.96:49913:xe" /> 
+		<property name="username" value="plan" />
 		<property name="password" value="plan" />
-		<property name="maxPoolSize" value="100" />
-		<property name="maxIdleTime" value="600" />
-		<property name="idleConnectionTestPeriod" value="300" />
-		<property name="checkoutTimeout" value="5000" />
+		<property name="initialSize" value="30"/>
+		<property name="maxTotal" value="30"/>
+		<property name="maxIdle" value="30"/>
+		<property name="minIdle" value="30"/>
+		<property name="maxWaitMillis" value="600" />
+		<property name="testWhileIdle" value="true"/>
+		<property name="timeBetweenEvictionRunsMillis" value="150000"/>
+		<property name="numTestsPerEvictionRun" value="4"/>
+		<property name="minEvictableIdleTimeMillis" value="-1"/>
 	</bean>
 </beans>
