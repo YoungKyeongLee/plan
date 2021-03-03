@@ -1,0 +1,9 @@
+@charset "UTF-8";
+form.login_form{
+/* 	border: 1px solid red; */
+	margin: auto;
+	text-align: center;
+}
+form.login_form h1{
+	font-size: 30pt;
+}

@@ -4,6 +4,11 @@ header{
 header div.header{
 	width: 100%;
 	display: inline-flex;
+	-ms-user-select: none; 
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 header div.icon{
 	width: 100px;

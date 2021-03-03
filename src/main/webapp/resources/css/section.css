@@ -51,3 +51,10 @@ section article.art i.fas:hover{
 	cursor: pointer;
 	color: #1DDB16;
 }
+div.main_div i.fa-undo-alt{
+	font-size: 40pt;
+	margin: 5px;
+}
+div.main_div i.fa-undo-alt:hover{
+	cursor: pointer;
+}
