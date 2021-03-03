@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.young.dao.MembershipDAO;
+import com.young.others.Encrypt;
 import com.young.vo.MembershipVO;
 
 @Service
@@ -17,7 +18,9 @@ public class PlanRestService {
 	}
 	
 	public String signUp(MembershipVO vo) {
-		return null;
+		vo.setPw(Encrypt.SecurePassword(vo.getId(), vo.getPw()));
+		int result = membershipDAO.insert(vo);
+		return result == 1 ? "true" : "false";
 	}
 
 }

@@ -1,26 +1,28 @@
 @charset "UTF-8";
+form.Sign_form,
 form.login_form{
 /* 	border: 1px solid red; */
 	margin: auto;
 	text-align: center;
 }
+form.Sign_form h1,
 form.login_form h1{
 	font-size: 30pt;
 }
-form .signUP_Box_2,
-form .signUP_Box_3,
-form .signUP_Box_4,
-form .signUP_Box_5,
-form .signUP_Box_6,
-form .signUP_Box_7{
+.Sign_form .signUP_Box_2,
+.Sign_form .signUP_Box_3,
+.Sign_form .signUP_Box_4,
+.Sign_form .signUP_Box_5,
+.Sign_form .signUP_Box_6,
+.Sign_form .signUP_Box_7{
 	display: none;
 }
 
-form input.finish{
+.Sign_form input.finish{
 	background-color: #EAEAEA;
 }
 
-form .signUp_Button{
+.Sign_form .signUp_Button{
 	display: inline-block;
 	width: 70px;
 	height: 25px;
@@ -28,7 +30,7 @@ form .signUp_Button{
 	color: white;
 	margin-left: 10px;
 }
-form .signUp_Button:hover{
+.Sign_form .signUp_Button:hover{
 	cursor: pointer;
 	background: #A1CF36;
 	font-weight: bold;

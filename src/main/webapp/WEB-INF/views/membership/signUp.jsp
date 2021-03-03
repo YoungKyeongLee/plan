@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<form class="login_form">
+<form class="Sign_form">
 	<h1>Sign UP</h1>
 	<p class="signUP_Box_1">
 		<input id="userid" name="id" type="text" placeholder="ID">
