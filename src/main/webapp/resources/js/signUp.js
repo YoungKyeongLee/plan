@@ -14,7 +14,7 @@ async function checkId(event){
 		msg = data ? '사용가능한 아이디 입니다.' : '중복된 아이디 입니다.';
 		if(data) {
 			distroyInput(useridInput);
-			nextBoxOpen(event, '2', 'id', userid);
+			nextBoxOpen(event, 2, 'id', userid);
 		}
 	} else {
 		msg = '아이디를 5자 이상 입력해주세요';
@@ -40,7 +40,7 @@ function checkPW(event){
 		msg = '비밀번호가 일치합니다.';
 		distroyInput(userpwInput);
 		distroyInput(userpwConfirmInput);
-		nextBoxOpen(event, '3', 'pw', userpw);
+		nextBoxOpen(event, 3, 'pw', userpw);
 	}
 	alert(msg);
 }
@@ -49,7 +49,7 @@ function checkName(event){
 	let username = usernameInput.value;
 	if(username.length >= 2){
 		distroyInput(usernameInput);
-		nextBoxOpen(event, '4', 'name', username);
+		nextBoxOpen(event, 4, 'name', username);
 	} else {
 		alert('이름이 너무 짧습니다. 2자 이상 입력해주세요');
 	}
@@ -60,7 +60,7 @@ function checkPhoneNum(event){
 	let phoneNum = phoneNumInput.value;
 	if(regExp.test(phoneNum)){
 		distroyInput(phoneNumInput);
-		nextBoxOpen(event, '5', 'phone', phoneNum);
+		nextBoxOpen(event, 5, 'phone', phoneNum);
 	} else{
 		alert("'-'를 포함하여 입력해주세요");
 	}
@@ -71,7 +71,7 @@ function checkEmail(event){
 	let email = emailInput.value;
 	if(regExp.test(email)){
 		distroyInput(emailInput);
-		nextBoxOpen(event, '6', 'email', email);
+		nextBoxOpen(event, 6, 'email', email);
 	} else{
 		alert('잘못된 이메일 형식입니다.');
 	}
@@ -81,7 +81,7 @@ function checkBirth(event){
 	let birth = birthInput.value;
 	if(true){
 		distroyInput(birthInput);
-		nextBoxOpen(event, '7', 'birth', birth);
+		nextBoxOpen(event, 7, 'birth', birth);
 	} else{
 		alert('잘못된 생일입니다.');
 	}
@@ -93,6 +93,7 @@ function distroyInput(name){
 function nextBoxOpen(event, nex, type, value){
 	event.target.style.display='none';
 	document.getElementsByClassName('signUP_Box_' + nex)[0].style.display = 'block';
+	document.querySelector('.signUP_Box_' + (nex - 1) + ' .signUpExplain').style.display = 'none';
 	signUpList[type]=value;
 }
 function resetSignUp(){
@@ -100,6 +101,7 @@ function resetSignUp(){
 	inputList = document.querySelectorAll('.Sign_form input');
 	pList = document.querySelectorAll('.Sign_form p');
 	buttonList = document.querySelectorAll('.Sign_form span');
+	explainList = document.querySelectorAll('.Sign_form .signUpExplain');
 	
 	for(let index = 0; index < inputList.length - 1; index++){
 		inputList[index].className = "";
@@ -111,5 +113,8 @@ function resetSignUp(){
 	}
 	buttonList.forEach(li => {
 		li.style.display = "inline-block";
+	});
+	explainList.forEach(li => {
+		li.style.display = "block";
 	});
 }
