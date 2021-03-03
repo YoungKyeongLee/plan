@@ -7,3 +7,29 @@ form.login_form{
 form.login_form h1{
 	font-size: 30pt;
 }
+form .signUP_Box_2,
+form .signUP_Box_3,
+form .signUP_Box_4,
+form .signUP_Box_5,
+form .signUP_Box_6,
+form .signUP_Box_7{
+	display: none;
+}
+
+form input.finish{
+	background-color: #EAEAEA;
+}
+
+form .signUp_Button{
+	display: inline-block;
+	width: 70px;
+	height: 25px;
+	background-color: #C5F35A;
+	color: white;
+	margin-left: 10px;
+}
+form .signUp_Button:hover{
+	cursor: pointer;
+	background: #A1CF36;
+	font-weight: bold;
+}

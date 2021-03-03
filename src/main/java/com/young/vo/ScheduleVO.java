@@ -1,6 +1,6 @@
 package com.young.vo;
 
-public class Schedule {
+public class ScheduleVO {
 	private String id;
 	private int num;
 	private String bunch;

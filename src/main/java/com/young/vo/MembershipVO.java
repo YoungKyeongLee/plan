@@ -1,6 +1,6 @@
 package com.young.vo;
 
-public class Membership {
+public class MembershipVO {
 	private String id;
 	private String pw;
 	private String name;

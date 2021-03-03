@@ -31,7 +31,11 @@
 		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
 		<property name="mapperLocations">
 			<list>
-<!-- 				<value>classpath:config/sqlmap-**.xml</value> -->
+				<value>classpath:config/sqlmap-bucket.xml</value>
+				<value>classpath:config/sqlmap-bunch.xml</value>
+				<value>classpath:config/sqlmap-goal.xml</value>
+				<value>classpath:config/sqlmap-membership.xml</value>
+				<value>classpath:config/sqlmap-schedule.xml</value>
 			</list>
 		</property>
 	</bean>

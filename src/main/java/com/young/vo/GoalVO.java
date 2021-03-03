@@ -1,6 +1,6 @@
 package com.young.vo;
 
-public class Goal {
+public class GoalVO {
 	private String id;
 	private int num;
 	private String bunch;

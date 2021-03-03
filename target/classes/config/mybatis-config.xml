@@ -11,7 +11,11 @@
 	</settings>
 	
 	<typeAliases>
-<!-- 		<typeAlias type="com.young.vo.someVO" alias="name" /> -->
+		<typeAlias type="com.young.vo.BucketVO" alias="bucket" />
+		<typeAlias type="com.young.vo.BunchVO" alias="bunch" />
+		<typeAlias type="com.young.vo.GoalVO" alias="goal" />
+		<typeAlias type="com.young.vo.MembershipVO" alias="membership" />
+		<typeAlias type="com.young.vo.ScheduleVO" alias="schedule" />
 		
 	</typeAliases>
 	

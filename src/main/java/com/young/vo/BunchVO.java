@@ -1,6 +1,6 @@
 package com.young.vo;
 
-public class Bunch {
+public class BunchVO {
 	private String id;
 	private String bunch;
 	

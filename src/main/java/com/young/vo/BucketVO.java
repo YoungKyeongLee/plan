@@ -1,6 +1,6 @@
 package com.young.vo;
 
-public class Bucket {
+public class BucketVO {
 	private String id;
 	private String bucket;
 	private String checkbox;

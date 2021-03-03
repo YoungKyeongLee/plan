@@ -17,6 +17,8 @@
 <link href="resources/css/membership.css" rel="stylesheet">
 <!-- 폰트어썸 -->
 <script src="https://kit.fontawesome.com/2f6ba02431.js" crossorigin="anonymous"></script>
+<!-- AXIOS -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -78,8 +80,93 @@
 	</div>
 </section>
 <script>
-	function signUp(){
-		console.log('signUP');
+	var signUpList = {};
+	async function signUp(){
+		const {data} = await axios.post('/plan/rest/signUp/', signUpList);
+		console.log(data);
+	}
+	async function checkId(event){
+		let useridInput = document.getElementById('userid');
+		let userid = useridInput.value;
+		let msg;
+		if(userid !== '' && userid.length >= 5){
+			const {data} = await axios.get('/plan/rest/signUp/idCheck/' + userid + "/");
+			msg = data ? '사용가능한 아이디 입니다.' : '중복된 아이디 입니다.';
+			if(data) {
+				distroyInput(useridInput);
+				nextBoxOpen(event, '2', 'id', userid);
+			}
+		} else {
+			msg = '아이디를 5자 이상 입력해주세요';
+		}
+		alert(msg);
+	}
+	function checkPW(event){
+		let userpwInput = document.getElementById('userpw');
+		let userpwConfirmInput = document.getElementById('userpwConfirm');
+		let userpw = userpwInput.value;
+		let userpwConfirm = userpwConfirmInput.value;
+		let msg;
+		if(userpw === userpwConfirm){
+			msg = '비밀번호가 일치합니다.';
+			distroyInput(userpwInput);
+			distroyInput(userpwConfirmInput);
+			nextBoxOpen(event, '3', 'pw', userpw);
+		} else {
+			msg = '비밀번호가 일치하지 않습니다. 다시 확인해주세요';
+			userpwInput.value = '';
+			userpwConfirmInput.value = '';
+		}
+		alert(msg);
+	}
+	function checkName(event){
+		let usernameInput = document.getElementById('username');
+		let username = usernameInput.value;
+		if(username.length >= 2){
+			distroyInput(usernameInput);
+			nextBoxOpen(event, '4', 'name', username);
+		} else {
+			alert('이름이 너무 짧습니다. 2자 이상 입력해주세요');
+		}
+	}
+	function checkPhoneNum(event){
+		let phoneNumInput = document.getElementById('phoneNum');
+		let phoneNum = phoneNumInput.value;
+		if(true){
+			distroyInput(phoneNumInput);
+			nextBoxOpen(event, '5', 'phone', phoneNum);
+		} else{
+			alert("'-' 없이 10~11자리 숫자로 입력해주세요");
+		}
+	}
+	function checkEmail(event){
+		let emailInput = document.getElementById('emailText');
+		let email = emailInput.value;
+		if(true){
+			distroyInput(emailInput);
+			nextBoxOpen(event, '6', 'email', email);
+		} else{
+			alert('잘못된 이메일 형식입니다.');
+		}
+	}
+	function checkBirth(event){
+		let birthInput = document.getElementById('birthText');
+		let birth = birthInput.value;
+		if(true){
+			distroyInput(birthInput);
+			nextBoxOpen(event, '7', 'birth', birth);
+		} else{
+			alert('잘못된 생일입니다.');
+		}
+	}
+	function distroyInput(name){
+		name.readOnly = true;
+		name.className = "finish";
+	}
+	function nextBoxOpen(event, nex, type, value){
+		event.target.style.display='none';
+		document.getElementsByClassName('signUP_Box_' + nex)[0].style.display = 'block';
+		signUpList[type]=value;
 	}
 </script>
 <!-- 기본 메뉴 관련 메서드들 -->
