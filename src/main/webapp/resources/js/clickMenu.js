@@ -3,6 +3,8 @@
 		document.querySelectorAll(".main_div").forEach(main =>{
 			main.style.display = (main.id === type) ? "inline-flex" : "none";
 		});
+		resetSignUp();
+		resetSignIn();
 	}
 
 // 	side nav 바 클릭 시 체크 표시 추가하고, 그에 맞는 div의 display를 활성화하는 메서드

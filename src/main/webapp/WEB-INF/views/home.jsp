@@ -69,7 +69,7 @@
 		</article>
 	</div>
 	<div class="main_div" id="main_sign_up" style="display: none;">
-		<span onclick="resetSignUp();membership('main_div')"><i class="fas fa-undo-alt"></i></span>
+		<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
 		<br>
 <!-- 		회원가입 -->
 		<%@ include file="membership/signUp.jsp" %>	

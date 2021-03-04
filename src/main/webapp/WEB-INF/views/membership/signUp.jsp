@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <form class="Sign_form">
-	<h1>Sign UP</h1>
+	<h1 onclick="resetSignUp()">Sign UP</h1>
 	<p class="signUP_Box_1">
 		<a class="signUpExplain">아이디는 5자 이상</a>
 		<input id="userid" name="id" type="text" placeholder="ID">

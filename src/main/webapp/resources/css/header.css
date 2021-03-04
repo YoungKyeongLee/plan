@@ -13,6 +13,7 @@ header div.header{
 header div.icon{
 	width: 100px;
 	height: 100px;
+	cursor: pointer;
 }
 header div.icon img{
 	width: 100px;
@@ -27,7 +28,8 @@ header div.header div.main h1{
 	margin-bottom: 0px;
 	margin-topw: 0px;
 	text-align: center;
-	font-size: 35pt;
+	font-size: 35pt;;
+	cursor: pointer;
 }
 header div.header div.header_membership{
 	display: inline-block;

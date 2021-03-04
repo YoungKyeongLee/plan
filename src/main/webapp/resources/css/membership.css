@@ -8,6 +8,7 @@ form.login_form{
 form.Sign_form h1,
 form.login_form h1{
 	font-size: 30pt;
+	cursor: pointer;
 }
 .Sign_form .signUP_Box_2,
 .Sign_form .signUP_Box_3,

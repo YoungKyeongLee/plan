@@ -1,5 +1,7 @@
 package com.young.controller;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,5 +29,11 @@ public class PlanRestController {
 	@PostMapping(produces="application/text; charset=utf8")
 	public String signUp(@RequestBody MembershipVO vo) {
 		return svc.signUp(vo);
+	}
+	
+	@RequestMapping("/signIn/")
+	@PostMapping(produces="application/text; charset=utf8")
+	public HashMap<String, Object> signIn(@RequestBody MembershipVO vo) {
+		return svc.signIn(vo);
 	}
 }

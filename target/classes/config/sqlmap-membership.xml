@@ -12,5 +12,9 @@
 	<insert id="insert" parameterType="membership">
 		insert into membership values (#{id}, #{pw}, #{name}, #{phone}, #{email}, #{birth})
 	</insert>
+	
+	<select id="select" parameterType="membership" resultType="membership">
+		select * from membership where id=#{id} and pw=#{pw}
+	</select>
 </mapper>
 		
