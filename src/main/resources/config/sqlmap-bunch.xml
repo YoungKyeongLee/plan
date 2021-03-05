@@ -4,6 +4,8 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 		
 <mapper namespace="com.young.dao.BunchDAO">
-	
+	<select id="select" parameterType="String" resultType="String">
+		select bunch from bunch where id=#{id}
+	</select>
 </mapper>
 		

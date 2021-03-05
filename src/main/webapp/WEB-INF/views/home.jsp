@@ -21,6 +21,8 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <!-- 회원가입 js-->
 <script type="text/javascript" src="resources/js/signUp.js"></script>
+<!-- 로그인 js-->
+<script type="text/javascript" src="resources/js/signIn.js"></script>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -84,5 +86,16 @@
 <!-- 기본 메뉴 관련 메서드들 -->
 <script type="text/javascript" src="resources/js/clickMenu.js"></script>
 <%@ include file="footer.jsp" %>
+<script type="text/javascript">
+	function initFunctionAfterLogin(data){
+		console.log(data);
+		console.log(data['id']);
+		console.log(data['name']);
+		console.log(data['bunchList']);
+		console.log(data['scheduleList']);
+		console.log(data['goalList']);
+		console.log(data['bucketList']);
+	}
+</script>
 </body>
 </html>
