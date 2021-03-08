@@ -103,7 +103,7 @@ function resetSignUp(){
 	buttonList = document.querySelectorAll('.Sign_form span');
 	explainList = document.querySelectorAll('.Sign_form .signUpExplain');
 	
-	for(let index = 0; index < inputList.length - 1; index++){
+	for(let index = 0; index < inputList.length; index++){
 		inputList[index].className = "";
 		inputList[index].readOnly = false;
 		inputList[index].value="";

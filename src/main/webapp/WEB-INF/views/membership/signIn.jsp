@@ -7,7 +7,7 @@
 	<p>
 	<input id="loginPW" type="password" placeholder="PW">
 	<p>
-	<input type="button" value="SIGN IN" onclick="login()">
+	<span class="green_Button" onclick="login()">SIGN IN</span>
 	<p>
 	<a href="">did you forget your account?</a>
 </form>

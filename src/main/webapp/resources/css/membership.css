@@ -23,19 +23,6 @@ form.login_form h1{
 	background-color: #EAEAEA;
 }
 
-.Sign_form .signUp_Button{
-	display: inline-block;
-	width: 70px;
-	height: 25px;
-	background-color: #C5F35A;
-	color: white;
-	margin-left: 10px;
-}
-.Sign_form .signUp_Button:hover{
-	cursor: pointer;
-	background: #A1CF36;
-	font-weight: bold;
-}
 .Sign_form .signUpExplain{
 	display: block;
 	color: red;

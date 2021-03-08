@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <form id="addGoal_form">
-	<h1>새 목표 추가 <i class="fas fa-cog"></i></h1>
+	<h1>새 목표 추가 <i class="fas fa-cog" onclick="newGroup('addGoal')"></i><span class = "addGroup"><input type='text' placeholder="그룹 추가"><input type="button" value="추가"></span></h1>
 	<p>
 		<label>그 &nbsp;&nbsp;&nbsp; 룹 : </label>
 		<select class="bunchList">

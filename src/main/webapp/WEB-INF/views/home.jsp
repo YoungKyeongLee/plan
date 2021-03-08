@@ -104,7 +104,7 @@
 		}
 		let InputBox = document.querySelectorAll('#' + type + '_form input');
 		let boxLength = InputBox.length;
-		for(let ib = 0; ib < boxLength - 2; ib++){
+		for(let ib = 1; ib < boxLength - 2; ib++){
 			let thisInputBox = InputBox[ib];
 			if(thisInputBox.value === ''){
 				thisInputBox.focus();
@@ -120,6 +120,10 @@
 		const {data} = await axios.post('/plan/rest/' + type + '/', ob);
 		console.log(data ? '성공' : '실패');
 		console.log(type);
+	}
+	function newGroup(type){
+		let boxDispay = document.querySelector("#" + type + "_form .addGroup");
+		boxDispay.style.display = boxDispay.style.display === '' ? 'none' : '';
 	}
 </script>
 <script>
