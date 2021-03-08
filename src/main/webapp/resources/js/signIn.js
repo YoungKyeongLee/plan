@@ -25,6 +25,7 @@ async function login(){
 	
 	const { data } = await axios.post('/plan/rest/signIn/', user);
 	if(data['result']){
+		membership('main_div');
 		alert('환영합니다.');
 		initFunctionAfterLogin(data);
 	} else {
