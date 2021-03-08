@@ -7,5 +7,11 @@
 	<select id="select" parameterType="String" resultType="goal">
 		select * from goal where id=#{id}
 	</select>
+	
+	<insert id="insert" parameterType="schedule">
+		insert into goal 
+			values 
+		(#{id}, (select NVL(max(num), 0) + 1 from goal), #{bunch}, #{goal}, #{day}, #{alarm})
+	</insert>
 </mapper>
 		

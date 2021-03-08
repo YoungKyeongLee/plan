@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.young.service.PlanRestService;
+import com.young.vo.GoalVO;
 import com.young.vo.MembershipVO;
+import com.young.vo.ScheduleVO;
 
 @RestController
 @RequestMapping("/rest")
@@ -35,5 +37,17 @@ public class PlanRestController {
 	@PostMapping(produces="application/text; charset=utf8")
 	public HashMap<String, Object> signIn(@RequestBody MembershipVO vo) {
 		return svc.signIn(vo);
+	}
+	
+	@RequestMapping("/addSchedule/")
+	@PostMapping(produces="application/text; charset=utf8")
+	public String addSchedule(@RequestBody ScheduleVO vo) {
+		return svc.addSchedule(vo);
+	}
+	
+	@RequestMapping("/addGoal/")
+	@PostMapping(produces="application/text; charset=utf8")
+	public String addGoal(@RequestBody GoalVO vo) {
+		return svc.addGoal(vo);
 	}
 }

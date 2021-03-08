@@ -8,4 +8,6 @@ public interface GoalDAO {
 
 	List<GoalVO> select(String id);
 
+	int insert(GoalVO vo);
+
 }

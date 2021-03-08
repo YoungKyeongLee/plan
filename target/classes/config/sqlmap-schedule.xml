@@ -7,5 +7,11 @@
 	<select id="select" parameterType="String" resultType="schedule">
 		select * from schedule where id=#{id}
 	</select>
+	
+	<insert id="insert" parameterType="schedule">
+		insert into schedule 
+			values 
+		(#{id}, (select NVL(max(num), 0) + 1 from schedule), #{bunch}, #{title}, #{content}, #{day}, #{time}, #{alarm})
+	</insert>
 </mapper>
 		

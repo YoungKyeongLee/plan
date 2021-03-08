@@ -5,7 +5,7 @@
 		
 <mapper namespace="com.young.dao.BucketDAO">
 	<select id="select" parameterType="String" resultType="bucket">
-		select * from bucket where id=#{id}
+		select bucket, checkbox from bucket where id=#{id}
 	</select>
 </mapper>
 		

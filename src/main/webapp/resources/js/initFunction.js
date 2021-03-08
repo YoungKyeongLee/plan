@@ -1,9 +1,10 @@
+var staticLoginInfo = {id: "", name: ""};
 function initFunctionAfterLogin(data){
+	staticLoginInfo['id'] = data['id'];
+	staticLoginInfo['name'] = data['name'];
 	console.log('로그인');
 	console.log(data);
 	console.log(data['result']);
-	console.log(data['id']);
-	console.log(data['name']);
 	console.log(data['bunchList']);
 	console.log(data['scheduleList']);
 	console.log(data['goalList']);
@@ -13,10 +14,16 @@ function initFunctionAfterLogin(data){
 }
 function initFunctionAfterLogout(){
 	console.log('초기실행 또는 로그아웃');
+	staticLoginInfo = {id: "", name: ""};
 	headerSettings(false);
-	articleSettings(null, null, null, null);
+	let bunchList = ["가족행사", "미팅", "친구"];
+	let scheduleList = [];
+	let goalList = [];
+	let bucketList = [{bucket : "다이어트", checkbox : "Y"},{bucket : "패러글라이딩", checkbox : "N"}];
+	articleSettings(bunchList, scheduleList, scheduleList, bucketList);
 }
 function headerSettings(checkLogin){
+	console.log(staticLoginInfo);
 	switch(checkLogin){
 	case true:
 		console.log('headerSettings 함수 true 실행');
@@ -34,7 +41,19 @@ function articleSettings(bunchList, scheduleList, goalList, bucketList){
 	bucketSettings(bucketList);
 }
 function bunchSettings(bunchList){
-	console.log('bunchSettings 함수 실행');
+	document.querySelectorAll('.bunchList').forEach(bunch => {
+		bunch.innerHTML = '';
+		let hiddenOption = document.createElement('option');
+		hiddenOption.setAttribute("hidden", "true");
+		hiddenOption.innerHTML = "선택하기";
+		bunch.appendChild(hiddenOption);
+		for(let bu in bunchList){
+			let option = document.createElement('option');
+			option.setAttribute('value', bunchList[bu]);
+			option.innerHTML = bunchList[bu];
+			bunch.appendChild(option);
+		}
+	});
 }
 function scheduleSettings(scheduleList){
 	console.log('scheduleSettings 함수 실행');
@@ -44,4 +63,18 @@ function goalSettings(goalList){
 }
 function bucketSettings(bucketList){
 	console.log('bucketSettings 함수 실행');
+	let bucketBox = document.getElementById('yourBucketList');
+	bucketBox.innerHTML = '';
+	for(let bu in bucketList){
+		let li= document.createElement('li');
+		let checkBox= document.createElement('input');
+		checkBox.setAttribute('type', 'checkbox');
+		console.log(bucketList[bu].checkbox);
+		if(bucketList[bu].checkbox === 'Y') checkBox.setAttribute('checked', 'checked');
+		
+		li.innerHTML = bucketList[bu].bucket;
+		
+		li.appendChild(checkBox);
+		bucketBox.appendChild(li);
+	}
 }

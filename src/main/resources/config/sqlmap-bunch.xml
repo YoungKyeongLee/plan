@@ -7,5 +7,12 @@
 	<select id="select" parameterType="String" resultType="String">
 		select bunch from bunch where id=#{id}
 	</select>
+	
+	<insert id="insertDefaultList" parameterType="String">
+		insert all into bunch values (#{id}, '가족행사') 
+					into bunch values (#{id}, '친구') 
+					into bunch values (#{id}, '운동') 
+					select * from dual
+	</insert>
 </mapper>
 		

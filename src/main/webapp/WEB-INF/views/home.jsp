@@ -88,5 +88,42 @@
 <!-- 기본 메뉴 관련 메서드들 -->
 <script type="text/javascript" src="resources/js/clickMenu.js"></script>
 <%@ include file="footer.jsp" %>
+<script>
+	async function add(type){
+		if(staticLoginInfo['id'] === ""){
+			alert('로그인 후 이용 가능합니다^^');
+			return;
+		}
+		ob = {};
+		let checkGroup = document.querySelector('#' + type + '_form .bunchList');
+		if(checkGroup.value === '선택하기'){
+			checkGroup.focus();
+			return;
+		} else {
+			ob['bunch'] = checkGroup.value;
+		}
+		let InputBox = document.querySelectorAll('#' + type + '_form input');
+		let boxLength = InputBox.length;
+		for(let ib = 0; ib < boxLength - 2; ib++){
+			let thisInputBox = InputBox[ib];
+			if(thisInputBox.value === ''){
+				thisInputBox.focus();
+				return;
+			} else {
+				ob[thisInputBox.name] = thisInputBox.value;
+			}
+		}
+		ob['alarm'] = InputBox[boxLength - 2].checked ? 'Y' : 'N';
+		ob['id'] = staticLoginInfo['id'];
+		
+		console.log(ob);
+		const {data} = await axios.post('/plan/rest/' + type + '/', ob);
+		console.log(data ? '성공' : '실패');
+		console.log(type);
+	}
+</script>
+<script>
+	initFunctionAfterLogout();
+</script>
 </body>
 </html>

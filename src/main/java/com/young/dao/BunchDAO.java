@@ -6,4 +6,6 @@ public interface BunchDAO {
 
 	List<String> select(String id);
 
+	int insertDefaultList(String id);
+
 }

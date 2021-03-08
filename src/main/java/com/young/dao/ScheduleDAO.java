@@ -8,4 +8,6 @@ public interface ScheduleDAO {
 
 	List<ScheduleVO> select(String id);
 
+	int insert(ScheduleVO vo);
+
 }
