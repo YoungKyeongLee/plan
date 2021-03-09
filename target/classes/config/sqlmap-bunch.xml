@@ -18,5 +18,9 @@
 	<insert id="insert" parameterType="bunch">
 		insert into bunch values (#{id}, #{bunch})
 	</insert>
+	
+	<select id="checkEquals" parameterType="bunch" resultType="int">
+		select count(*) from bunch where id=#{id} and bunch=#{bunch}
+	</select>
 </mapper>
 		

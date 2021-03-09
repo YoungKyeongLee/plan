@@ -45,19 +45,23 @@ public class PlanRestService {
 		return Login.getList(req, user);
 	}
 
-	public String addSchedule(ScheduleVO vo) {
+	public String addSchedule(HttpServletRequest req, ScheduleVO vo) {
 		int result = scheduleDAO.insert(vo);
-		return result == 1 ? "true" : "false";
+		return result == 1 ? Login.getList(req, getUser(req)) : "false";
 	}
 
-	public String addGoal(GoalVO vo) {
+	public String addGoal(HttpServletRequest req, GoalVO vo) {
 		int result = goalDAO.insert(vo);
-		return result == 1 ? "true" : "false";
+		return result == 1 ? Login.getList(req, getUser(req)) : "false";
 	}
 
-	public String addBunch(BunchVO vo) {
+	public String addBunch(HttpServletRequest req, BunchVO vo) {
+		if(bunchDAO.checkEquals(vo) == 1) return "conflict";
 		int result = bunchDAO.insert(vo);
-		return result == 1 ? "true" : "false";
+		return result == 1 ? Login.getList(req, getUser(req)) : "false";
 	}
-
+	
+	private MembershipVO getUser(HttpServletRequest req) {
+		return (MembershipVO)req.getSession().getAttribute("user");
+	}
 }

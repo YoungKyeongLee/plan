@@ -12,4 +12,6 @@ public interface BunchDAO {
 
 	int insert(BunchVO vo);
 
+	int checkEquals(BunchVO vo);
+
 }

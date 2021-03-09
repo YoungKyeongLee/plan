@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -43,6 +44,7 @@ public class Login {
 	}
 	
 	public static String getList(HttpServletRequest req, MembershipVO user) {
+		HttpSession Session = req.getSession();
 		boolean loginCheck = user != null;
 		HashMap<String, Object> resultList = new HashMap<String, Object>();
 		resultList.put("result", loginCheck);
@@ -55,7 +57,10 @@ public class Login {
 			resultList.put("scheduleList", scheduleDAO.select(id));
 			resultList.put("goalList", goalDAO.select(id));
 			resultList.put("bucketList", bucketDAO.select(id));
-			req.getSession().setAttribute("resultList", gson.toJson(resultList));
+			
+			Session.setAttribute("user", user);
+			Session.setAttribute("resultList", gson.toJson(resultList));
+			Session.setMaxInactiveInterval(60 * 60 * 3);
 		}
 		return  gson.toJson(resultList);
 	}

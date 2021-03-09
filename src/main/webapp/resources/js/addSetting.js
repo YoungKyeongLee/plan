@@ -27,10 +27,15 @@ async function add(type){
 	
 	console.log(ob);
 	const {data} = await axios.post('/plan/rest/' + type + '/', ob);
-	console.log(data ? '성공' : '실패');
-	console.log(type);
+	
+	afterUpdate(data);
 }
-function newBunch(type){
+function activeBunch(type){
 	let boxDispay = document.querySelector("#" + type + "_form .addBunch");
 	boxDispay.style.display = boxDispay.style.display === 'block' ? 'none' : 'block';
+}
+function resetBunchAddBox(){
+	let boxDispay = document.querySelectorAll("form .addBunch");
+	boxDispay[0].style.display = 'none';
+	boxDispay[1].style.display = 'none';
 }

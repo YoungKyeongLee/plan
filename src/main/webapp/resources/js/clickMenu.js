@@ -5,11 +5,13 @@
 		});
 		resetSignUp();
 		resetSignIn();
+		resetBunchAddBox();
 	}
 
 // 	side nav 바 클릭 시 체크 표시 추가하고, 그에 맞는 div의 display를 활성화하는 메서드
 document.querySelectorAll(".menu").forEach(menu => { 
 	menu.addEventListener('click', function(event){ 
+		resetBunchAddBox();
 		Activation = menu.id;
 		document.querySelectorAll(".art div.article").forEach(div => {
 			divIdName = div.id.split('_')[0];

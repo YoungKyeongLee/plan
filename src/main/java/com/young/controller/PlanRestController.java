@@ -18,7 +18,7 @@ import com.young.vo.MembershipVO;
 import com.young.vo.ScheduleVO;
 
 @RestController
-@RequestMapping("/rest")
+@RequestMapping(value="/rest", produces =org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class PlanRestController {
 	
 	@Autowired PlanRestService svc;
@@ -35,26 +35,26 @@ public class PlanRestController {
 		return svc.signUp(vo);
 	}
 	
-	@RequestMapping(value="/signIn/", method=RequestMethod.POST, produces =org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(value="/signIn/", method=RequestMethod.POST)
 	public String signIn(HttpServletRequest req, @RequestBody MembershipVO vo) {
 		return svc.signIn(req, vo);
 	}
 	
 	@RequestMapping("/addSchedule/")
 	@PostMapping(produces="application/text; charset=utf8")
-	public String addSchedule(@RequestBody ScheduleVO vo) {
-		return svc.addSchedule(vo);
+	public String addSchedule(HttpServletRequest req, @RequestBody ScheduleVO vo) {
+		return svc.addSchedule(req, vo);
 	}
 	
 	@RequestMapping("/addGoal/")
 	@PostMapping(produces="application/text; charset=utf8")
-	public String addGoal(@RequestBody GoalVO vo) {
-		return svc.addGoal(vo);
+	public String addGoal(HttpServletRequest req, @RequestBody GoalVO vo) {
+		return svc.addGoal(req, vo);
 	}
 	
 	@RequestMapping("/addBunch/")
 	@PostMapping(produces="application/text; charset=utf8")
-	public String addBunch(@RequestBody BunchVO vo) {
-		return svc.addBunch(vo);
+	public String addBunch(HttpServletRequest req, @RequestBody BunchVO vo) {
+		return svc.addBunch(req, vo);
 	}
 }

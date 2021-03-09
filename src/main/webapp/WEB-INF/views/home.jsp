@@ -27,6 +27,8 @@
 <script type="text/javascript" src="resources/js/signIn.js"></script>
 <!-- 플랜 신규 추가 관련 js-->
 <script type="text/javascript" src="resources/js/addSetting.js"></script>
+<!-- 예외처리 js-->
+<script type="text/javascript" src="resources/js/exception.js"></script>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -96,7 +98,7 @@
 	}
 	
 	
-	async function addBunch(event){
+	async function addBunch(event, type){
 		if(loginCheckFunction()){
 			alert('로그인 후 이용 가능합니다^^');
 			return;
@@ -112,6 +114,9 @@
 		}
 		
 		const {data} = await axios.post('/plan/rest/addBunch/', ob);
+		newGroup.value = '';
+		afterUpdate(data);
+		activeBunch(type);
 	}
 </script>
 <script>

@@ -14,8 +14,9 @@ public class PlanService {
 	public ModelAndView home(HttpServletRequest req) {
 		ModelAndView mav = new ModelAndView("home");
 		MembershipVO user = (MembershipVO)req.getSession().getAttribute("user");
-		if(user != null)
-			req.getSession().setAttribute("resultList", Login.getList(req, user));;
+		if(user != null) {
+			Login.getList(req, user);			
+		}
 		return mav;
 	}
 

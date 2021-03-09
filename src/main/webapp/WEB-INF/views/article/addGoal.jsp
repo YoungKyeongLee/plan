@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <form id="addGoal_form">
-	<h1>새 목표 추가 <i class="fas fa-plus-circle" onclick="newBunch('addGoal')"></i></h1>
-	<div class = "addBunch"><input type='text' placeholder="그룹 추가"><span class="green_Button" onclick="addBunch(event)">추가</span></div>
+	<h1>새 목표 추가 <i class="fas fa-plus-circle" onclick="activeBunch('addGoal')"></i></h1>
+	<div class = "addBunch"><input type='text' placeholder="그룹 추가"><span class="green_Button" onclick="addBunch(event, 'addGoal')">추가</span></div>
 	<p>
 		<label>그 &nbsp;&nbsp;&nbsp; 룹 : </label>
 		<select class="bunchList">
