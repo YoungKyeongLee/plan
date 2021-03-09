@@ -8,3 +8,6 @@ function afterUpdate(data){
 		alert('정상처리 되었습니다.');
 	}
 }
+function loginCheckFunction(){
+	return staticLoginInfo['id'] === "";
+}

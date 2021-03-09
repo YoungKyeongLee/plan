@@ -39,3 +39,23 @@ function resetBunchAddBox(){
 	boxDispay[0].style.display = 'none';
 	boxDispay[1].style.display = 'none';
 }
+async function addBunch(event, type){
+	if(loginCheckFunction()){
+		alert('로그인 후 이용 가능합니다^^');
+		return;
+	}
+	let newGroup = event.target.parentNode.children[0];
+	if(newGroup.value === ''){
+		newGroup.focus();
+		return;
+	}
+	ob = {
+		id: staticLoginInfo['id'],
+		bunch : newGroup.value,
+	}
+	
+	const {data} = await axios.post('/plan/rest/addBunch/', ob);
+	newGroup.value = '';
+	afterUpdate(data);
+	activeBunch(type);
+}
