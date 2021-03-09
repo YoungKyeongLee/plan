@@ -14,5 +14,9 @@
 					into bunch values (#{id}, '운동') 
 					select * from dual
 	</insert>
+	
+	<insert id="insert" parameterType="bunch">
+		insert into bunch values (#{id}, #{bunch})
+	</insert>
 </mapper>
 		

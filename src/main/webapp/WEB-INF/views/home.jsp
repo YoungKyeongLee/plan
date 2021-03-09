@@ -25,6 +25,8 @@
 <script type="text/javascript" src="resources/js/signUp.js"></script>
 <!-- 로그인 js-->
 <script type="text/javascript" src="resources/js/signIn.js"></script>
+<!-- 플랜 신규 추가 관련 js-->
+<script type="text/javascript" src="resources/js/addSetting.js"></script>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -89,45 +91,34 @@
 <script type="text/javascript" src="resources/js/clickMenu.js"></script>
 <%@ include file="footer.jsp" %>
 <script>
-	async function add(type){
-		if(staticLoginInfo['id'] === ""){
+	function loginCheckFunction(){
+		return staticLoginInfo['id'] === "";
+	}
+	
+	
+	async function addBunch(event){
+		if(loginCheckFunction()){
 			alert('로그인 후 이용 가능합니다^^');
 			return;
 		}
-		ob = {};
-		let checkGroup = document.querySelector('#' + type + '_form .bunchList');
-		if(checkGroup.value === '선택하기'){
-			checkGroup.focus();
+		let newGroup = event.target.parentNode.children[0];
+		if(newGroup.value === ''){
+			newGroup.focus();
 			return;
-		} else {
-			ob['bunch'] = checkGroup.value;
 		}
-		let InputBox = document.querySelectorAll('#' + type + '_form input');
-		let boxLength = InputBox.length;
-		for(let ib = 1; ib < boxLength - 2; ib++){
-			let thisInputBox = InputBox[ib];
-			if(thisInputBox.value === ''){
-				thisInputBox.focus();
-				return;
-			} else {
-				ob[thisInputBox.name] = thisInputBox.value;
-			}
+		ob = {
+			id: staticLoginInfo['id'],
+			bunch : newGroup.value,
 		}
-		ob['alarm'] = InputBox[boxLength - 2].checked ? 'Y' : 'N';
-		ob['id'] = staticLoginInfo['id'];
 		
-		console.log(ob);
-		const {data} = await axios.post('/plan/rest/' + type + '/', ob);
-		console.log(data ? '성공' : '실패');
-		console.log(type);
-	}
-	function newGroup(type){
-		let boxDispay = document.querySelector("#" + type + "_form .addGroup");
-		boxDispay.style.display = boxDispay.style.display === '' ? 'none' : '';
+		const {data} = await axios.post('/plan/rest/addBunch/', ob);
 	}
 </script>
 <script>
-	initFunctionAfterLogout();
+	if('${resultList}' === '')
+		initFunctionAfterLogout();
+	else
+		initFunctionAfterLogin(${resultList});
 </script>
 </body>
 </html>

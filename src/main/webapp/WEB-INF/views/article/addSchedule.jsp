@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <form id="addSchedule_form">
-	<h1>새 일정 추가 <i class="fas fa-cog" onclick="newGroup('addSchedule')"></i><span class = "addGroup"><input type='text' placeholder="그룹 추가"><input type="button" value="추가"></span></h1>
+	<h1>새 일정 추가 <i class="fas fa-plus-circle" onclick="newBunch('addSchedule')"></i></h1>
+	<div class = "addBunch"><input type='text' placeholder="그룹 추가"><span class="green_Button" onclick="addBunch(event)">추가</span></div>
 	<p>
 		<label>그 &nbsp;&nbsp;&nbsp; 룹 : </label>
 		<select class="bunchList">
@@ -29,6 +30,6 @@
 		<input type="checkbox" name="alarm">알림
 	</p>
 	<p>
-		<input type="button" name="button" value="저장하기" onclick="add('addSchedule')">
+		<span class="green_Button" onclick="add('addSchedule')">저장하기</span>
 	</p>
 </form>

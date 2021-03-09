@@ -59,7 +59,8 @@ div.main_div i.fa-undo-alt:hover{
 	cursor: pointer;
 }
 .green_Button{
-	display: inline-block;
+	display: inline-block !important;
+	text-align: center;
 	width: 70px;
 	height: 25px;
 	background-color: #C5F35A;
