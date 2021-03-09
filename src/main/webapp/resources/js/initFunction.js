@@ -1,5 +1,10 @@
 var staticLoginInfo = {id: "", name: ""};
 function initFunctionAfterLogin(data){
+	if(data === undefined){
+		alert('로그인 시간이 만료되었습니다. 다시 로그인 해주세요');
+		initFunctionAfterLogout();
+		return;
+	}
 	staticLoginInfo['id'] = data['id'];
 	staticLoginInfo['name'] = data['name'];
 	headerSettings(data['result']);
@@ -60,7 +65,7 @@ function bucketSettings(bucketList){
 		let li= document.createElement('li');
 		let checkBox= document.createElement('input');
 		checkBox.setAttribute('type', 'checkbox');
-		console.log(bucketList[bu].checkbox);
+		if(!loginCheckFunction()) checkBox.addEventListener('click', bucketCheckEvent);
 		if(bucketList[bu].checkbox === 'Y') checkBox.setAttribute('checked', 'checked');
 		
 		li.innerHTML = bucketList[bu].bucket;

@@ -4,10 +4,10 @@
 <form id="bucketList_form">
 	<h1>버킷 리스트</h1>
 	<p>
-		<input type="text" placeholder="버킷리스트 추가">
+		<input id="bucketListInput" type="text" placeholder="버킷리스트 추가">
 	</p>
 	<p>
-		<input type="button" value="추가하기">
+		<span class="green_Button" onclick="addBucket()">추가하기</span>
 	</p>
 	<div>
 		<ul id="yourBucketList">

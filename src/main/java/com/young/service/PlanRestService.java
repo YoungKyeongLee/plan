@@ -12,6 +12,7 @@ import com.young.dao.MembershipDAO;
 import com.young.dao.ScheduleDAO;
 import com.young.others.Encrypt;
 import com.young.others.Login;
+import com.young.vo.BucketVO;
 import com.young.vo.BunchVO;
 import com.young.vo.GoalVO;
 import com.young.vo.MembershipVO;
@@ -58,6 +59,17 @@ public class PlanRestService {
 	public String addBunch(HttpServletRequest req, BunchVO vo) {
 		if(bunchDAO.checkEquals(vo) == 1) return "conflict";
 		int result = bunchDAO.insert(vo);
+		return result == 1 ? Login.getList(req, getUser(req)) : "false";
+	}
+	
+	public String addBucket(HttpServletRequest req, BucketVO vo) {
+		if(bucketDAO.checkEquals(vo) == 1) return "conflict";
+		int result = bucketDAO.insert(vo);
+		return result == 1 ? Login.getList(req, getUser(req)) : "false";
+	}
+	
+	public String updateBucket(HttpServletRequest req, BucketVO vo) {
+		int result = bucketDAO.update(vo);
 		return result == 1 ? Login.getList(req, getUser(req)) : "false";
 	}
 	

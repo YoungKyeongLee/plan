@@ -7,5 +7,17 @@
 	<select id="select" parameterType="String" resultType="bucket">
 		select bucket, checkbox from bucket where id=#{id}
 	</select>
+	
+	<insert id="insert" parameterType="bucket">
+		insert into bucket (id, bucket) values (#{id}, #{bucket})
+	</insert>
+	
+	<select id="checkEquals" parameterType="bucket" resultType="int">
+		select count(*) from bucket where id=#{id} and bucket=#{bucket}
+	</select>
+	
+	<update id="update" parameterType="bucket">
+		update bucket set checkbox=#{checkbox} where id=#{id} and bucket=#{bucket}
+	</update>
 </mapper>
 		

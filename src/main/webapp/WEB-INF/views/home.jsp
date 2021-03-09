@@ -93,8 +93,34 @@
 <script type="text/javascript" src="resources/js/clickMenu.js"></script>
 <%@ include file="footer.jsp" %>
 <script>
-	
-
+	async function addBucket(){
+		if(loginCheckFunction()){
+			alert('로그인 후 이용 가능합니다^^');
+			return;
+		}
+		let input = document.getElementById('bucketListInput');
+		if(input.value === ''){
+			alert('내용을 입력해주세요');
+		} else{
+			ob = {
+				id: staticLoginInfo['id'],
+				bucket : input.value,
+			}	
+			const {data} = await axios.post('/plan/rest/addBucket/', ob);
+			afterUpdate(data);
+			input.value='';
+		}
+	}
+	async function bucketCheckEvent(event){
+		let targetInput = event.target;
+		ob = {
+			id: staticLoginInfo['id'],
+			bucket : targetInput.parentNode.innerText,
+			checkbox : targetInput.checked ? 'Y' : 'N',
+		}
+		const {data} = await axios.post('/plan/rest/updateBucket/', ob);
+		afterUpdate(data);
+	}
 </script>
 <script>
 	if('${resultList}' === '')

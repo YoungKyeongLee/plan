@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.young.service.PlanRestService;
+import com.young.vo.BucketVO;
 import com.young.vo.BunchVO;
 import com.young.vo.GoalVO;
 import com.young.vo.MembershipVO;
@@ -56,5 +57,17 @@ public class PlanRestController {
 	@PostMapping(produces="application/text; charset=utf8")
 	public String addBunch(HttpServletRequest req, @RequestBody BunchVO vo) {
 		return svc.addBunch(req, vo);
+	}
+	
+	@RequestMapping("/addBucket/")
+	@PostMapping(produces="application/text; charset=utf8")
+	public String addBucket(HttpServletRequest req, @RequestBody BucketVO vo) {
+		return svc.addBucket(req, vo);
+	}
+	
+	@RequestMapping("/updateBucket/")
+	@PostMapping(produces="application/text; charset=utf8")
+	public String updateBucket(HttpServletRequest req, @RequestBody BucketVO vo) {
+		return svc.updateBucket(req, vo);
 	}
 }

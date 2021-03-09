@@ -8,4 +8,10 @@ public interface BucketDAO {
 
 	List<BucketVO> select(String id);
 
+	int insert(BucketVO vo);
+
+	int checkEquals(BucketVO vo);
+
+	int update(BucketVO vo);
+
 }
