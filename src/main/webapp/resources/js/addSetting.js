@@ -31,6 +31,6 @@ async function add(type){
 	console.log(type);
 }
 function newBunch(type){
-	let boxDispay = document.querySelector("#" + type + "_form .addGroup");
-	boxDispay.style.display = boxDispay.style.display === '' ? 'none' : '';
+	let boxDispay = document.querySelector("#" + type + "_form .addBunch");
+	boxDispay.style.display = boxDispay.style.display === 'block' ? 'none' : 'block';
 }

@@ -2,3 +2,7 @@
 section article.art label{
 	margin-right: 10px;
 }
+#addSchedule_form .addBunch,
+#addGoal_form .addBunch{
+	display: none;
+}

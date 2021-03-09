@@ -2,13 +2,6 @@ var staticLoginInfo = {id: "", name: ""};
 function initFunctionAfterLogin(data){
 	staticLoginInfo['id'] = data['id'];
 	staticLoginInfo['name'] = data['name'];
-	console.log('로그인');
-	console.log(data);
-	console.log(data['result']);
-	console.log(data['bunchList']);
-	console.log(data['scheduleList']);
-	console.log(data['goalList']);
-	console.log(data['bucketList']);
 	headerSettings(data['result']);
 	articleSettings(data['bunchList'], data['scheduleList'], data['goalList'], data['bucketList']);
 }
@@ -34,7 +27,6 @@ function headerSettings(checkLogin){
 	}
 }
 function articleSettings(bunchList, scheduleList, goalList, bucketList){
-	console.log('articleSettings 함수 실행');
 	bunchSettings(bunchList);
 	scheduleSettings(scheduleList);
 	goalSettings(goalList);
@@ -62,7 +54,6 @@ function goalSettings(goalList){
 	console.log('goalSettings 함수 실행');
 }
 function bucketSettings(bucketList){
-	console.log('bucketSettings 함수 실행');
 	let bucketBox = document.getElementById('yourBucketList');
 	bucketBox.innerHTML = '';
 	for(let bu in bucketList){
