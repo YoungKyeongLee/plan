@@ -14,4 +14,6 @@ public interface BucketDAO {
 
 	int update(BucketVO vo);
 
+	int delete(BucketVO vo);
+
 }

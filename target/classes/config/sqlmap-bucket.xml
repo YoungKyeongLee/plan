@@ -19,5 +19,9 @@
 	<update id="update" parameterType="bucket">
 		update bucket set checkbox=#{checkbox} where id=#{id} and bucket=#{bucket}
 	</update>
+	
+	<delete id="delete" parameterType="bucket">
+		delete from bucket where id=#{id} and bucket=#{bucket}
+	</delete>
 </mapper>
 		

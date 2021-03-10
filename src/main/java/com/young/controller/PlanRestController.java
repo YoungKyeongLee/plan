@@ -75,4 +75,10 @@ public class PlanRestController {
 	public String updateBucket(HttpServletRequest req, @RequestBody BucketVO vo) {
 		return svc.updateBucket(req, vo);
 	}
+	
+	@RequestMapping("/removeBucket/")
+	@PostMapping(produces="application/text; charset=utf8")
+	public String removeBucket(HttpServletRequest req, @RequestBody BucketVO vo) {
+		return svc.removeBucket(req, vo);
+	}
 }

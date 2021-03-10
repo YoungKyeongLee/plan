@@ -74,14 +74,22 @@ function bucketSettings(bucketList){
 	bucketBox.innerHTML = '';
 	for(let bu in bucketList){
 		let li= document.createElement('li');
+		let a = document.createElement('a');
 		let checkBox= document.createElement('input');
+		let closeButton = document.createElement('i');
+		
+		closeButton.setAttribute('class', 'far fa-window-close');
+		closeButton.addEventListener('click', removeBucket);
+		
 		checkBox.setAttribute('type', 'checkbox');
 		if(!loginCheckFunction()) checkBox.addEventListener('click', bucketCheckEvent);
 		if(bucketList[bu].checkbox === 'Y') checkBox.setAttribute('checked', 'checked');
 		
-		li.innerHTML = bucketList[bu].bucket;
+		a.innerHTML = bucketList[bu].bucket;
 		
 		li.appendChild(checkBox);
+		li.appendChild(a);
+		li.appendChild(closeButton);
 		bucketBox.appendChild(li);
 	}
 }

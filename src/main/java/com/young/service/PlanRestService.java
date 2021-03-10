@@ -83,4 +83,9 @@ public class PlanRestService {
 		return (MembershipVO)req.getSession().getAttribute("user");
 	}
 
+	public String removeBucket(HttpServletRequest req, BucketVO vo) {
+		int result = bucketDAO.delete(vo);
+		return result == 1 ? Login.getList(req, getUser(req)) : "false";
+	}
+
 }

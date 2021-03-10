@@ -13,6 +13,8 @@
 <link href="resources/css/addSetting.css" rel="stylesheet">
 <!-- 일정 확인, 알림 설정 -->
 <link href="resources/css/spanMenu.css" rel="stylesheet">
+<!-- 버킷리스트 -->
+<link href="resources/css/bucket.css" rel="stylesheet">
 <!-- 회원가입, 로그인 -->
 <link href="resources/css/membership.css" rel="stylesheet">
 <!-- 폰트어썸 -->
@@ -29,6 +31,8 @@
 <script type="text/javascript" src="resources/js/addSetting.js"></script>
 <!-- 예외처리 js-->
 <script type="text/javascript" src="resources/js/exception.js"></script>
+<!-- 버킷리스트 js-->
+<script type="text/javascript" src="resources/js/bucket.js"></script>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -93,34 +97,7 @@
 <script type="text/javascript" src="resources/js/clickMenu.js"></script>
 <%@ include file="footer.jsp" %>
 <script>
-	async function addBucket(){
-		if(loginCheckFunction()){
-			alert('로그인 후 이용 가능합니다^^');
-			return;
-		}
-		let input = document.getElementById('bucketListInput');
-		if(input.value === ''){
-			alert('내용을 입력해주세요');
-		} else{
-			ob = {
-				id: staticLoginInfo['id'],
-				bucket : input.value,
-			}	
-			const {data} = await axios.post('/plan/rest/addBucket/', ob);
-			afterUpdate(data);
-			input.value='';
-		}
-	}
-	async function bucketCheckEvent(event){
-		let targetInput = event.target;
-		ob = {
-			id: staticLoginInfo['id'],
-			bucket : targetInput.parentNode.innerText,
-			checkbox : targetInput.checked ? 'Y' : 'N',
-		}
-		const {data} = await axios.post('/plan/rest/updateBucket/', ob);
-		afterUpdate(data);
-	}
+
 </script>
 <script>
 	if('${resultList}' === '')

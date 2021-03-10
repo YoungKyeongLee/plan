@@ -1,0 +1,24 @@
+form#bucketList_form .fa-window-close{
+	color : #EAEAEA;
+	float: right;
+	margin-right: 30px;
+	line-height: 30px;
+}
+form#bucketList_form .fa-window-close:hover{
+	color : red;
+	cursor: pointer;
+}
+form#bucketList_form ul{
+	list-style: none;
+    padding-left: 0px;
+}
+form#bucketList_form ul li{
+	height: 30px;
+}
+form#bucketList_form ul li:hover{
+	background-color: #E4F7BA;
+}
+form#bucketList_form ul li a{
+	margin-left: 10px;
+	margin-right: 10px;
+}
