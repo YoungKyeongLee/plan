@@ -13,5 +13,9 @@
 			<div class="header_button" onclick="membership('main_sign_up')">SIGN UP</div>
 			<div class="header_button" onclick="membership('main_sign_in')">SIGN IN</div>
 		</div>
+		<div class="header_membership" style="display:none;">
+			<div class="header_button" onclick=""></div>
+			<div class="header_button" onclick="logout()">LOG OUT</div>
+		</div>
 	</div>
 </header>

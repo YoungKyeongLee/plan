@@ -41,6 +41,11 @@ public class PlanRestController {
 		return svc.signIn(req, vo);
 	}
 	
+	@RequestMapping(value="/logout/", method=RequestMethod.GET)
+	public void logout(HttpServletRequest req) {
+		svc.logout(req);
+	}
+	
 	@RequestMapping("/addSchedule/")
 	@PostMapping(produces="application/text; charset=utf8")
 	public String addSchedule(HttpServletRequest req, @RequestBody ScheduleVO vo) {

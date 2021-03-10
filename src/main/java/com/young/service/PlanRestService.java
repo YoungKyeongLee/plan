@@ -1,6 +1,7 @@
 package com.young.service;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,11 @@ public class PlanRestService {
 		return Login.getList(req, user);
 	}
 
+	public void logout(HttpServletRequest req) {
+		HttpSession Session = req.getSession();
+		Session.removeAttribute("user");
+		Session.removeAttribute("resultList");
+	}
 	public String addSchedule(HttpServletRequest req, ScheduleVO vo) {
 		int result = scheduleDAO.insert(vo);
 		return result == 1 ? Login.getList(req, getUser(req)) : "false";
@@ -76,4 +82,5 @@ public class PlanRestService {
 	private MembershipVO getUser(HttpServletRequest req) {
 		return (MembershipVO)req.getSession().getAttribute("user");
 	}
+
 }

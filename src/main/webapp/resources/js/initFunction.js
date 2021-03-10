@@ -11,7 +11,6 @@ function initFunctionAfterLogin(data){
 	articleSettings(data['bunchList'], data['scheduleList'], data['goalList'], data['bucketList']);
 }
 function initFunctionAfterLogout(){
-	console.log('초기실행 또는 로그아웃');
 	staticLoginInfo = {id: "", name: ""};
 	headerSettings(false);
 	let bunchList = ["가족행사", "미팅", "친구"];
@@ -20,14 +19,26 @@ function initFunctionAfterLogout(){
 	let bucketList = [{bucket : "다이어트", checkbox : "Y"},{bucket : "패러글라이딩", checkbox : "N"}];
 	articleSettings(bunchList, scheduleList, scheduleList, bucketList);
 }
+async function logout(){
+	if(confirm('로그아웃 하시겠습니까?') === true){
+		axios.get('/plan/rest/logout/');
+		initFunctionAfterLogout();
+	}
+}
 function headerSettings(checkLogin){
-	console.log(staticLoginInfo);
+	let headerBox = document.getElementsByClassName('header_membership');
+	let userName = staticLoginInfo['name'];
+	headerBox[1].children[0].title=userName;
+	headerBox[1].children[0].innerHTML = '[' + (userName.length > 3 ? (userName.substring(0,3) + '..') : userName) + ']님';
+	
 	switch(checkLogin){
 	case true:
-		console.log('headerSettings 함수 true 실행');
+		headerBox[0].style.display = 'none';
+		headerBox[1].style.display = 'inline-block';
 		break;
 	case false:
-		console.log('headerSettings 함수 false 실행');
+		headerBox[0].style.display = 'inline-block';
+		headerBox[1].style.display = 'none';
 		break;
 	}
 }
