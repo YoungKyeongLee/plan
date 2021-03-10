@@ -12,22 +12,17 @@
 	</ul>
 </nav>
 <span class="checkSpan1 cale">
-	달력
-	<table>
-		<tr>
-			<td>dfdff</td>
-		</tr>
-	</table>
+	<%@ include file="checkSchedule/cale.jsp"%>
 </span>
 <span class="checkSpan1 list" style="display: none;">
-	리스트
+	<%@ include file="checkSchedule/list.jsp"%>
 </span>
 <span class="checkSpan1 item" style="display: none;">
-	품목별
+	<%@ include file="checkSchedule/item.jsp"%>
 </span>
 <span class="checkSpan1 graph" style="display: none;">
-	그래프
+	<%@ include file="checkSchedule/graph.jsp"%>
 </span>
 <span class="checkSpan1 goal" style="display: none;">
-	목표
+	<%@ include file="checkSchedule/goal.jsp"%>
 </span>
