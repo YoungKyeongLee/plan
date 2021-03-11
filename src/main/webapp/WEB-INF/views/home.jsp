@@ -17,6 +17,8 @@
 <link href="resources/css/bucket.css" rel="stylesheet">
 <!-- 회원가입, 로그인 -->
 <link href="resources/css/membership.css" rel="stylesheet">
+<!-- 일정확인/달력 -->
+<link href="resources/css/checkSchedule/cale.css" rel="stylesheet">
 <!-- 폰트어썸 -->
 <script src="https://kit.fontawesome.com/2f6ba02431.js" crossorigin="anonymous"></script>
 <!-- AXIOS -->
@@ -102,8 +104,9 @@
 <script>
 	if('${resultList}' === '')
 		initFunctionAfterLogout();
-	else
+	else{
 		initFunctionAfterLogin(${resultList});
+	}
 </script>
 </body>
 </html>

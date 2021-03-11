@@ -1,0 +1,29 @@
+.caleDiv #calendar{
+	width: 400px;
+	height: auto;
+}
+#calendar .week{
+	display:flex;
+}
+#calendar .week span{
+}
+#calendar .week .beforeDay,
+#calendar .week .activeDay,
+#calendar .week .afterDay{
+	display: inline-block;
+	width: 100px;
+	height: 60px;
+	border: 1px solid grey;
+}
+#calendar .week .beforeDay,
+#calendar .week .afterDay{
+	color: #D5D5D5;
+	background-color: #EAEAEA;
+}
+#calendar .week .activeDay{
+	background-color: #F6F6F6;
+	font-weight: bold;
+}
+.caleDiv h3{
+	display: inline-block;
+}

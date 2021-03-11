@@ -1,4 +1,5 @@
 var staticLoginInfo = {id: "", name: ""};
+var resultList = '';
 function initFunctionAfterLogin(data){
 	if(data === undefined){
 		alert('로그인 시간이 만료되었습니다. 다시 로그인 해주세요');
@@ -7,11 +8,13 @@ function initFunctionAfterLogin(data){
 	}
 	staticLoginInfo['id'] = data['id'];
 	staticLoginInfo['name'] = data['name'];
+	resultList = data;
 	headerSettings(data['result']);
 	articleSettings(data['bunchList'], data['scheduleList'], data['goalList'], data['bucketList']);
 }
 function initFunctionAfterLogout(){
 	staticLoginInfo = {id: "", name: ""};
+	resultList = '';
 	headerSettings(false);
 	let bunchList = ["가족행사", "미팅", "친구"];
 	let scheduleList = [];
