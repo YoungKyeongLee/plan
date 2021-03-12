@@ -1,5 +1,4 @@
 var staticLoginInfo = {id: "", name: ""};
-var resultList = '';
 function initFunctionAfterLogin(data){
 	if(data === undefined){
 		alert('로그인 시간이 만료되었습니다. 다시 로그인 해주세요');
@@ -47,8 +46,7 @@ function headerSettings(checkLogin){
 }
 function articleSettings(bunchList, scheduleList, goalList, bucketList){
 	bunchSettings(bunchList);
-	scheduleSettings(scheduleList);
-	goalSettings(goalList);
+	checkSettings(scheduleList, goalList);
 	bucketSettings(bucketList);
 }
 function bunchSettings(bunchList){
@@ -66,11 +64,8 @@ function bunchSettings(bunchList){
 		}
 	});
 }
-function scheduleSettings(scheduleList){
-	console.log('scheduleSettings 함수 실행');
-}
-function goalSettings(goalList){
-	console.log('goalSettings 함수 실행');
+function checkSettings(scheduleList, goalList){
+	createCalendar(scheduleList, goalList);
 }
 function bucketSettings(bucketList){
 	let bucketBox = document.getElementById('yourBucketList');
