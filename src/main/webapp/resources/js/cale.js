@@ -99,11 +99,11 @@ function showList(type, dayVal){
 		let span = document.createElement('span');
 		switch(type){
 		case "schedual":
-			span.innerHTML += '[ ' + cl.time + ' ] ' + cl.title + ' : ' + cl.content;
+			span.innerHTML = '[ ' + cl.time + ' ] ' + cl.title + ' : ' + cl.content;
 			span.title = '<' + cl.bunch + '>' + cl.content;
 			break;
 		case "goal":
-			span.innerHTML += '[' + cl.goal + ']';
+			span.innerHTML = '[' + cl.goal + ']';
 			span.title = '<' + cl.bunch + '>';
 			break;
 		}

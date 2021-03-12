@@ -44,43 +44,50 @@
 			PLAN과 함께 하루 목표와 일정을 관리하세요
 		</h1>
 	</div>
-	<div class="main_div" id="main_div">
-		<article style="width:350px; height:480px; background-color: #EAEAEA;">
-			
+	<div style="display: inline-flex;">
+		<article style="width:180px; height:620px;">
+			<ins class="kakao_ad_area" style="display:none;" 
+				 data-ad-unit    = "DAN-4VvW5m8OlFwcCDVW" 
+				 data-ad-width   = "160" 
+				 data-ad-height  = "600"></ins> 
+			<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
 		</article>
-		<nav class="nav">
-			<div class="menu" id="addSchedule">일정추가<i id="addScheduleCheck" class="fas fa-check"></i></div>
-			<div class="menu" id="addGoal">목표추가<i id="addGoalCheck" class="fas fa-check" style="display: none;"></i></div>
-			<div class="menu" id="checkSchedule">일정확인<i id="checkScheduleCheck" class="fas fa-check" style="display: none;"></i></div>
-			<div class="menu" id="bucketList">버킷리스트<i id="bucketListCheck" class="fas fa-check" style="display: none;"></i></div>
-			<div class="menu" id="setAlarm">알림설정<i id="setAlarmCheck" class="fas fa-check" style="display: none;"></i></div>
-		</nav>
-		<article class="art">
-<!-- 			일정 추가 -->
-			<div id="addSchedule_div" class="article">
-				<%@ include file="article/addSchedule.jsp" %>
-			</div>
+		<div class="main_div" id="main_div">
 			
-<!-- 			목표 추가 -->
-			<div id="addGoal_div" class="article" style="display: none;">
-				<%@ include file="article/addGoal.jsp" %>
-			</div>
-			
-<!-- 			일정 확인 -->
-			<div id="checkSchedule_div" class="article" style="display: none;">
-				<%@ include file="article/checkSchedule.jsp" %>
-			</div>
-			
-<!-- 			타입 캡슐 -->
-			<div id="bucketList_div" class="article" style="display: none;">
-				<%@ include file="article/bucketList.jsp" %>
-			</div>
-			
-<!-- 			알림 설정 -->
-			<div id="setAlarm_div" class="article" style="display: none;">
-				<%@ include file="article/setAlarm.jsp" %>
-			</div>
-		</article>
+			<nav class="nav">
+				<div class="menu" id="addSchedule">일정추가<i id="addScheduleCheck" class="fas fa-check"></i></div>
+				<div class="menu" id="addGoal">목표추가<i id="addGoalCheck" class="fas fa-check" style="display: none;"></i></div>
+				<div class="menu" id="checkSchedule">일정확인<i id="checkScheduleCheck" class="fas fa-check" style="display: none;"></i></div>
+				<div class="menu" id="bucketList">버킷리스트<i id="bucketListCheck" class="fas fa-check" style="display: none;"></i></div>
+				<div class="menu" id="setAlarm">알림설정<i id="setAlarmCheck" class="fas fa-check" style="display: none;"></i></div>
+			</nav>
+			<article class="art">
+	<!-- 			일정 추가 -->
+				<div id="addSchedule_div" class="article">
+					<%@ include file="article/addSchedule.jsp" %>
+				</div>
+				
+	<!-- 			목표 추가 -->
+				<div id="addGoal_div" class="article" style="display: none;">
+					<%@ include file="article/addGoal.jsp" %>
+				</div>
+				
+	<!-- 			일정 확인 -->
+				<div id="checkSchedule_div" class="article" style="display: none;">
+					<%@ include file="article/checkSchedule.jsp" %>
+				</div>
+				
+	<!-- 			타입 캡슐 -->
+				<div id="bucketList_div" class="article" style="display: none;">
+					<%@ include file="article/bucketList.jsp" %>
+				</div>
+				
+	<!-- 			알림 설정 -->
+				<div id="setAlarm_div" class="article" style="display: none;">
+					<%@ include file="article/setAlarm.jsp" %>
+				</div>
+			</article>
+		</div>
 	</div>
 	<div class="main_div" id="main_sign_up" style="display: none;">
 		<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
