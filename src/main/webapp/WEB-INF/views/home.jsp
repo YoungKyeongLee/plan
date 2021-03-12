@@ -88,18 +88,18 @@
 				</div>
 			</article>
 		</div>
-	</div>
-	<div class="main_div" id="main_sign_up" style="display: none;">
-		<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
-		<br>
-<!-- 		회원가입 -->
-		<%@ include file="membership/signUp.jsp" %>	
-	</div>
-	<div class="main_div" id="main_sign_in" style="display: none;">
-		<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
-		<br>
-<!-- 		로그인 -->
-		<%@ include file="membership/signIn.jsp" %>	
+		<div class="main_div" id="main_sign_up" style="display: none;">
+			<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
+			<br>
+	<!-- 		회원가입 -->
+			<%@ include file="membership/signUp.jsp" %>	
+		</div>
+		<div class="main_div" id="main_sign_in" style="display: none;">
+			<span onclick="membership('main_div')"><i class="fas fa-undo-alt"></i></span>
+			<br>
+	<!-- 		로그인 -->
+			<%@ include file="membership/signIn.jsp" %>	
+		</div>
 	</div>
 </section>
 <!-- 기본 메뉴 관련 메서드들 -->
