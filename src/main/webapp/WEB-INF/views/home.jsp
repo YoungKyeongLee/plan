@@ -36,7 +36,7 @@
 <!-- 버킷리스트 js-->
 <script type="text/javascript" src="resources/js/bucket.js"></script>
 <!-- 일정 확인/달력 js-->
-<script type="text/javascript" src="resources/js/bucket.js"></script>
+<script type="text/javascript" src="resources/js/cale.js"></script>
 </head>
 <body>
 <%@ include file="header.jsp" %>
