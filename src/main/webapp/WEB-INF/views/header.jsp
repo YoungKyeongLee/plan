@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <header>
 	<div class="header">
-		<div class="icon" onclick="location.href='/plan/'">
+		<div class="icon" onclick="location.href='${cpath}">
 			<img alt="메인 아이콘" src="resources/img/plan.png">
 		</div>
 		<div class="main">
-			<h1 onclick="location.href='/plan/'">PLAN</h1>
+			<h1 onclick="location.href='${cpath}'">PLAN</h1>
 		</div>
 		<div class="header_membership">
 			<div class="header_button" onclick="membership('main_sign_up')">SIGN UP</div>
