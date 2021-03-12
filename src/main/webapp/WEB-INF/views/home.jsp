@@ -45,7 +45,7 @@
 		</h1>
 	</div>
 	<div class="main_div" id="main_div">
-		<article style="width:350px; height:450px; background-color: #EAEAEA;">
+		<article style="width:350px; height:480px; background-color: #EAEAEA;">
 			
 		</article>
 		<nav class="nav">

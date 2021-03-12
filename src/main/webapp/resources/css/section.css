@@ -52,6 +52,7 @@ section div.main_div article{
 	vertical-align: top;
 	padding: 10px;
 	height: 100%;
+	max-height: 480px;
 	width: 100%;
 }
 section article.art h1{
