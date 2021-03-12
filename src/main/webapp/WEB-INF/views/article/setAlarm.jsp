@@ -11,11 +11,11 @@
 </nav>
 
 <span class="checkSpan2 text">
-	문자 알림
+	준비중입니다.
 </span>
 <span class="checkSpan2 katalk" style="display: none;">
-	카카오톡 알림
+	준비중입니다.
 </span>
 <span class="checkSpan2 email" style="display: none;">
-	이메일
+	준비중입니다.
 </span>
