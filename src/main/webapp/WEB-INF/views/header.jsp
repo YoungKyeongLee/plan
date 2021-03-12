@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <header>
 	<div class="header">
-		<div class="icon" onclick="location.href='${cpath}">
+		<div class="icon" onclick="location.href='${cpath}'">
 			<img alt="메인 아이콘" src="resources/img/plan.png">
 		</div>
 		<div class="main">
