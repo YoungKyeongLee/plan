@@ -1,7 +1,7 @@
 @charset "UTF-8";
 section div.intro{
 	height: 100px;
-	background:  olive;
+	background:  #79BD9A;
 	-ms-user-select: none; 
 	-moz-user-select: -moz-none;
 	-khtml-user-select: none;
@@ -23,7 +23,7 @@ section div.main_div nav.nav{
 	width: 300px;
 }
 section nav.nav i.fas{
-	color: #1DDB16;
+	color: #A8DBA8;
 	padding-left: 10px;
 }
 section div.main_div nav.nav div.menu{
@@ -34,7 +34,6 @@ section div.main_div nav.nav div.menu{
 	width: 300px;
 	height: 100px;
 	line-height: 100px;
-	border-radius: 40px;
 	-ms-user-select: none; 
 	-moz-user-select: -moz-none;
 	-khtml-user-select: none;
@@ -43,9 +42,9 @@ section div.main_div nav.nav div.menu{
 }
 section div.main_div nav.nav div.menu:hover{
 	cursor: pointer;
-	background-color: #E4F7BA;
+	background-color: #CFF0DA;
 	font-size: 23pt;
-	color: #1DDB16;
+	color: #3B8686;
 }
 section div.main_div article{
 	display:inline-block;
@@ -65,7 +64,7 @@ section article.art h1{
 }
 section article.art i.fas:hover{
 	cursor: pointer;
-	color: #1DDB16;
+	color: #A8DBA8;
 }
 div.main_div i.fa-undo-alt{
 	font-size: 40pt;
@@ -79,13 +78,13 @@ div.main_div i.fa-undo-alt:hover{
 	text-align: center;
 	width: 70px;
 	height: 25px;
-	background-color: #C5F35A;
+	background-color: #CFF09E;
 	color: white;
 	margin-left: 10px;
 	margin-right: 10px;
 }
 .green_Button:hover{
 	cursor: pointer;
-	background: #A1CF36;
+	background: #A8DBA8;
 	font-weight: bold;
 }

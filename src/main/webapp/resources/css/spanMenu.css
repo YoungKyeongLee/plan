@@ -12,7 +12,7 @@ section article.art .checkMenu2 li{
 	line-height: 50px;
 	display: inline-block;
 	text-align: center;
-	background-color: #E0FF8B;
+	background-color: #CFF09E;
 	font-weight: bold;
 	color: grey;
 	font-size: 12pt;
@@ -21,14 +21,14 @@ section article.art .checkMenu2 li{
 }
 section article.art .checkMenu1 li.select,
 section article.art .checkMenu2 li.select{
-	border: 5px solid #E0FF8B;
+	border: 5px solid #CFF09E;
 	background-color: white;
 }
 section article.art .checkMenu1 li:hover,
 section article.art .checkMenu2 li:hover{
 	background-color: white;
-	color: #1DDB16;
-	border: 5px solid #E0FF8B;
+	color: #3B8686;
+	border: 5px solid #CFF09E;
 	cursor: pointer;
 }
 section article.art span{

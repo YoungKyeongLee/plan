@@ -34,15 +34,17 @@ function checkMenuFunc(className, spanName){
 			document.querySelectorAll("." + spanName).forEach(sp =>{
 				if(sp.className.indexOf(li.id) >= 0){
 					sp.style.display="block";
-					li.style.border= '5px solid #E0FF8B';
-					li.style.backgroundColor= 'white';
+					//li.style.border= '5px solid #CFF09E';
+					//li.style.backgroundColor= 'white';
+					li.className="select"
 				} else {
 					sp.style.display="none";
 				}
 				document.querySelectorAll("." + className + " li").forEach(others =>{
 					if(others.id !== li.id){
-						others.style.border='5px solid white';
-						others.style.backgroundColor = '#E0FF8B';
+						// others.style.border='5px solid white';
+						//others.style.backgroundColor = '#CFF09E';
+						others.className="";
 					}
 				})
 			});

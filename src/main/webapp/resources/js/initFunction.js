@@ -1,5 +1,5 @@
-var cpath = '/plan/';
-// var cpath = '/';
+var cpath = '/plan/';	// 작업용
+// var cpath = '/';			// 배포판
 var staticLoginInfo = {id: "", name: ""};
 function initFunctionAfterLogin(data){
 	if(data === undefined){
