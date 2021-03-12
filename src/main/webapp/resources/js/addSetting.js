@@ -26,7 +26,7 @@ async function add(type){
 	ob['id'] = staticLoginInfo['id'];
 	
 	console.log(ob);
-	const {data} = await axios.post('/plan/rest/' + type + '/', ob);
+	const {data} = await axios.post('cpath + 'rest/' + type + '/', ob);
 	
 	afterUpdate(data);
 }
@@ -54,7 +54,7 @@ async function addBunch(event, type){
 		bunch : newGroup.value,
 	}
 	
-	const {data} = await axios.post('/plan/rest/addBunch/', ob);
+	const {data} = await axios.post(cpath + 'rest/addBunch/', ob);
 	newGroup.value = '';
 	afterUpdate(data);
 	activeBunch(type);

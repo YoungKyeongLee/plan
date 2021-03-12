@@ -23,7 +23,7 @@ async function login(){
 		pw : loginPwInput.value,
 	}
 	
-	const { data } = await axios.post('/plan/rest/signIn/', user);
+	const { data } = await axios.post(cpath + 'rest/signIn/', user);
 	if(data['result']){
 		membership('main_div');
 		alert('환영합니다.');

@@ -11,7 +11,7 @@ async function addBucket(){
 			id: staticLoginInfo['id'],
 			bucket : input.value,
 		}	
-		const {data} = await axios.post('/plan/rest/addBucket/', ob);
+		const {data} = await axios.post(cpath + 'rest/addBucket/', ob);
 		afterUpdate(data);
 		input.value='';
 	}
@@ -23,7 +23,7 @@ async function bucketCheckEvent(event){
 		bucket : targetInput.parentNode.innerText,
 		checkbox : targetInput.checked ? 'Y' : 'N',
 	}
-	const {data} = await axios.post('/plan/rest/updateBucket/', ob);
+	const {data} = await axios.post(cpath + 'rest/updateBucket/', ob);
 	afterUpdate(data);
 }
 async function removeBucket(event){
@@ -35,6 +35,6 @@ async function removeBucket(event){
 		id:staticLoginInfo['id'],
 		bucket:event.target.parentNode.children[1].innerText,
 	}
-	const {data} = await axios.post('/plan/rest/removeBucket/', ob);
+	const {data} = await axios.post(cpath + 'rest/removeBucket/', ob);
 	afterUpdate(data);
 }

@@ -1,6 +1,6 @@
 var signUpList = {};
 async function signUp(){
-	const {data} = await axios.post('/plan/rest/signUp/', signUpList);
+	const {data} = await axios.post(cpath + 'rest/signUp/', signUpList);
 	alert(data ? '회원가입이 완료되었습니다.' : '오류발생! 다시 시도해주세요');
 	resetSignUp();
 	membership('main_div');
@@ -10,7 +10,7 @@ async function checkId(event){
 	let userid = useridInput.value;
 	let msg;
 	if(userid !== '' && userid.length >= 5){
-		const {data} = await axios.get('/plan/rest/signUp/idCheck/' + userid + "/");
+		const {data} = await axios.get(cpath + 'rest/signUp/idCheck/' + userid + "/");
 		msg = data ? '사용가능한 아이디 입니다.' : '중복된 아이디 입니다.';
 		if(data) {
 			distroyInput(useridInput);

@@ -1,3 +1,5 @@
+var cpath = '/plan/';
+// var cpath = '/';
 var staticLoginInfo = {id: "", name: ""};
 function initFunctionAfterLogin(data){
 	if(data === undefined){
@@ -23,7 +25,7 @@ function initFunctionAfterLogout(){
 }
 async function logout(){
 	if(confirm('로그아웃 하시겠습니까?') === true){
-		axios.get('/plan/rest/logout/');
+		axios.get(cpath +'rest/logout/');
 		initFunctionAfterLogout();
 	}
 }
