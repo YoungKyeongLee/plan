@@ -26,7 +26,7 @@ async function add(type){
 	ob['id'] = staticLoginInfo['id'];
 	
 	console.log(ob);
-	const {data} = await axios.post('cpath + 'rest/' + type + '/', ob);
+	const {data} = await axios.post(cpath + 'rest/' + type + '/', ob);
 	
 	afterUpdate(data);
 }
