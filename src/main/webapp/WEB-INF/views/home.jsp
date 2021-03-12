@@ -35,8 +35,6 @@
 <script type="text/javascript" src="resources/js/exception.js"></script>
 <!-- 버킷리스트 js-->
 <script type="text/javascript" src="resources/js/bucket.js"></script>
-<!-- 일정 확인/달력 js-->
-<script type="text/javascript" src="resources/js/cale.js"></script>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -99,6 +97,8 @@
 </section>
 <!-- 기본 메뉴 관련 메서드들 -->
 <script type="text/javascript" src="resources/js/clickMenu.js"></script>
+<!-- 일정 확인/달력 js-->
+<script type="text/javascript" src="resources/js/cale.js"></script>
 <%@ include file="footer.jsp" %>
 <script>
 

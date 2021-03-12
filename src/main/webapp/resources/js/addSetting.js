@@ -25,7 +25,6 @@ async function add(type){
 	ob['alarm'] = InputBox[boxLength - 1].checked ? 'Y' : 'N';
 	ob['id'] = staticLoginInfo['id'];
 	
-	console.log(ob);
 	const {data} = await axios.post(cpath + 'rest/' + type + '/', ob);
 	
 	afterUpdate(data);

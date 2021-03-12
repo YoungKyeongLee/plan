@@ -58,7 +58,6 @@ function createCalendar(scheduleList, goalList){
 }
 function setList(year, month){
 	let compareDate = year + '-' + (month < 10 ? '0' : '') + (month + 1);
-	console.log(compareDate);
 	
 	let scheduleList = calscheduleList;
 	let goalList = calgoalList;
@@ -98,7 +97,6 @@ function showList(type, dayVal){
 	}
 	showList.forEach(cl => {
 		let span = document.createElement('span');
-		console.log(cl);
 		switch(type){
 		case "schedual":
 			span.innerHTML += '[ ' + cl.time + ' ] ' + cl.title + ' : ' + cl.content;
