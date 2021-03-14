@@ -10,4 +10,4 @@ Java, Oracle 11g, Mybatis, Spring Framework, Linux(Ubuntu), Javascript, Axios, A
 모든 기능들이 비동기식 Rest로 처리됩니다.
 
 ## 페이지 미리보기
-![
+![미리보기](plan-web.png)
