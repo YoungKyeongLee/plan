@@ -8,3 +8,6 @@ Java, Oracle 11g, Mybatis, Spring Framework, Linux(Ubuntu), Javascript, Axios, A
 ## 특징
 로그인, 로그아웃, 일정 추가, 목표추가, 그룹 추가, 버킷리스트 추가 및 삭제, 달력을 통한 목표와 일정 확인 등
 모든 기능들이 비동기식 Rest로 처리됩니다.
+
+## 페이지 미리보기
+![
