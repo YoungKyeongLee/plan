@@ -68,6 +68,7 @@ function bunchSettings(bunchList){
 }
 function checkSettings(scheduleList, goalList){
 	createCalendar(scheduleList, goalList);
+	createScheduleList(scheduleList, goalList);
 }
 function bucketSettings(bucketList){
 	let bucketBox = document.getElementById('yourBucketList');
