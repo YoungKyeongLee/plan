@@ -41,7 +41,7 @@
 <section>
 	<div class="intro">
 		<h1>
-			PLAN과 함께 하루 목표와 일정을 관리하세요
+			PLAN 과 함께 하루 목표와 일정을 관리하세요
 		</h1>
 	</div>
 	<div style="display: inline-flex;">
